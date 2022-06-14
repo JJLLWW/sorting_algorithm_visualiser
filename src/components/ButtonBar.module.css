@@ -1,0 +1,19 @@
+.ButtonBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background: transparent;
+}
+
+.Button {
+    border: 0;
+    min-width: 400px;
+    font-weight: bold;
+    font-size: 30pt;
+    background: transparent;
+    color: rgb(201, 238, 238);
+}
+
+.Button:hover {
+    color: rgb(255, 255, 255);
+}
