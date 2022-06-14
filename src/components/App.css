@@ -58,5 +58,11 @@
     /* relative to parent element */
     height: 50%;
     /* margin is transparent by default */
-    margin: 2%;
+    margin: 0.2%;
+}
+
+#IntInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
