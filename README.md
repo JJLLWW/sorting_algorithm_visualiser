@@ -9,11 +9,11 @@ Build dependencies
 * git CLI
 * nodejs >= 14
 
-'''
+```
 git clone https://github.com/JJLLWW/sorting_algorithm_visualiser
 npm install
 npm run start
-'''
+```
 
 ## Mock UI so far
 
