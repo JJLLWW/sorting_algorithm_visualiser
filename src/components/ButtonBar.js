@@ -1,12 +1,5 @@
 import styles from "./ButtonBar.module.css";
-
-// cleaner way to implement?
-function get_rand_heights(n) {
-    let arr1 = Array(n);
-    arr1.fill(0);
-    let arr2 = arr1.map((e, i) => {return   90*Math.random()});
-    return arr2;
-}
+import {get_rand_heights, swap_elems, bubble_sort} from "../algorithms/common.js"
 
 function sort_comp(a, b) {
     return a < b ? false : true;
@@ -26,14 +19,14 @@ export default function ButtonBar(props) {
     return (
         <nav>
             <div className={styles.ButtonBar}>
-                {/* should the buttons be components in their own right? */}
                 <button className={styles.Button} onClick={() => {
                     props.SetHeights(get_rand_heights(props.nbars));
                     }}>Regenerate Data</button>
+                {/* TODO: stop the button from being pressed if the algortihm is already running */}
                 <button className={styles.Button} onClick={() => {
-                    props.SetHeights(do_sort(props.heights));
-                }
-                }>Run Algorithm</button>
+                    bubble_sort(props.heights, props.SetHeights, props.SetActive);
+                }}>Run Algorithm</button>
+                <button className={styles.Button}>(Bubble Sort)</button>
             </div>
         </nav>
     );

@@ -9,30 +9,30 @@ import ButtonBar from "./ButtonBar";
 import styles from "./AlgVis.module.css";
 
 function Bar(props) {
-    useEffect(() => { console.log("child rendered"); });
     return (
-        <div className={styles.alg_bar} style={{height: String(props.height) + "%"}}></div>
+        <div className={props.isactive ? styles.alg_bar_active : styles.alg_bar} style={{height: String(props.height) + "%"}}></div>
     );
 }
 
-function render_bars(nbars, heights) {
+function render_bars(nbars, heights, active) {
     let bars = []
     for(let i=0; i<nbars; i++) {
-        bars.push(<Bar key={i} idx={i} height={heights[i]}/>);
+        bars.push(<Bar key={i} idx={i} height={heights[i]} isactive={active[i]}/>);
     }
     return bars;
 }
 
-// have the number of bars and value of the heights be state.
+// has to be some way to avoid modifying all bars for swapping two elements.
 function AlgVis(props) {
-    useEffect(() => { console.log("parent rendered"); });
     const [heights, SetHeights] = useState(get_rand_heights(props.nbars));
+    // may want to implement changing the number of bars later
     const [nbars, SetNbars] = useState(props.nbars);
+    const [isactive, SetActive] = useState(Array(props.nbars).fill(false));
     return (
         <div className={styles.alg_vis}>            
-            <ButtonBar SetHeights={SetHeights} nbars={nbars} heights={heights}></ButtonBar>
+            <ButtonBar SetHeights={SetHeights} SetActive={SetActive} nbars={nbars} heights={heights}></ButtonBar>
             <div className={styles.alg_win}>
-                {render_bars(nbars, heights)}
+                {render_bars(nbars, heights, isactive)}
             </div>
         </div>
     );

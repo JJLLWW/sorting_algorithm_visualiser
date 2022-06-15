@@ -7,7 +7,7 @@ function App() {
     let nbars = 50  ;
     return (
         <div className={styles.App}>
-            <h1 className={styles.App_title}>Algorithm Visualiser</h1>
+            <h1 className={styles.App_title}>Sorting Algorithm Visualiser</h1>
             <header className={styles.App_header}>
                 <AlgVis nbars={nbars}/>
             </header>

@@ -10,15 +10,21 @@
 .alg_win {
     display: flex;
     flex-direction: row;
-    /* have rectangles go up from the bottom of window */
     align-items: flex-end;
     flex-grow: 1;
 }
 
-/* bars are hanging from the top of alg_win not the bottom */
 .alg_bar {
     padding: 0;
     background: linear-gradient(white, black);
+    flex-grow: 1;
+    height: 50%;
+    margin: 0.2%;
+}
+
+.alg_bar_active {
+    padding: 0;
+    background: linear-gradient(white, red);
     flex-grow: 1;
     height: 50%;
     margin: 0.2%;
