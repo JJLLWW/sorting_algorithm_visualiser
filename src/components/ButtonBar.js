@@ -1,19 +1,7 @@
 import styles from "./ButtonBar.module.css";
-import {get_rand_heights, swap_elems, bubble_sort} from "../algorithms/common.js"
-
-function sort_comp(a, b) {
-    return a < b ? false : true;
-}
-
-function do_sort(list, ascending=true) {
-    if(ascending) {
-        // DANGER1: react danger zone, the return value of list.sort() has the same reference as the original array.
-        // So will not cause a re-render unless ... is used to get a copy.
-        return [...list.sort(sort_comp)];
-    } else {
-        return [...list.sort(sort_comp).reverse()];
-    }
-}
+import {get_rand_heights} from "../algorithms/common.js"
+import {bubble_sort} from "../algorithms/bubble_sort"
+import {quick_sort} from "../algorithms/quick_sort"
 
 export default function ButtonBar(props) {
     return (
@@ -27,6 +15,9 @@ export default function ButtonBar(props) {
                     bubble_sort(props.heights, props.SetHeights, props.SetActive);
                 }}>Run Algorithm</button>
                 <button className={styles.Button}>(Bubble Sort)</button>
+                <button onClick={()=>{
+                    quick_sort(props.heights, 0, props.nbars-1, props.SetHeights, props.SetActive)
+                }}>Test</button>
             </div>
         </nav>
     );

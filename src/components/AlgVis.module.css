@@ -14,6 +14,8 @@
     flex-grow: 1;
 }
 
+/* bad, is there some way to have these all "inherit" from some base style? */
+
 .alg_bar {
     padding: 0;
     background: linear-gradient(white, black);
@@ -22,9 +24,29 @@
     margin: 0.2%;
 }
 
+.white_black_grad {
+    background: linear-gradient(white, black);
+}
+
+.white_red_grad {
+    background: linear-gradient(white, red);
+}
+
+.white_yellow_grad {
+    background: linear-gradient(white, yellow);
+}
+
 .alg_bar_active {
     padding: 0;
     background: linear-gradient(white, red);
+    flex-grow: 1;
+    height: 50%;
+    margin: 0.2%;
+}
+
+.alg_bar_pivot {
+    padding: 0;
+    background: linear-gradient(white, yellow);
     flex-grow: 1;
     height: 50%;
     margin: 0.2%;
