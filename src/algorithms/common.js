@@ -15,3 +15,20 @@ export function swap_elems(i, j, list, setList) {
     list[i] = tmp;
     setList([...list]);
 }
+
+export function render_two_red(i, j, sz, setActive) {
+    let active = Array(sz).fill(0);
+    [active[i], active[j]] = [1, 1];
+    setActive(active);
+}
+
+export function render_two_yellow(i, j, sz, setActive) {
+    let active = Array(sz).fill(0);
+    [active[i], active[j]] = [2, 2];
+    setActive(active);  
+}
+
+export function clear_bars(sz, setActive) {
+    let active = Array(sz).fill(0);
+    setActive(active);
+}

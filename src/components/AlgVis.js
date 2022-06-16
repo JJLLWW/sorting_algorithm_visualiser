@@ -8,7 +8,7 @@ import ButtonBar from "./ButtonBar";
 
 import styles from "./AlgVis.module.css";
 
-// No built-in enum, for now isactive === 0 => white, isactive === 1 => red, isactive === 2 => pivot
+// No built-in enum, for now isactive === 0 => white, isactive === 1 => red, isactive === 2 => yellow
 
 function Bar(props) {
     return (
